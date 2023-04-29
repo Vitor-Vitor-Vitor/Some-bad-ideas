@@ -18,7 +18,7 @@ def calcular_odds(odds_casa_1, odds_casa_2): # parametros são 2 listas com 2 in
     else: 
         print('Soma das probabilidades das Odds {} e {} resultou menor que 100%! ({:.2f}%)'.format(odds_casa_1[0], odds_casa_2[1], soma_prob1))
 
-        sobra1 = (100 - soma_prob1) / 100 + 1              # Aqui já ajusta a sobra da banca e já vai ajustar na hora de montar o dict
+        sobra1 = (100 - soma_prob1) / 100 + 1              # Aqui já calcula a sobra da banca e já vai ajustar na hora de montar o dict
         probs[odds_casa_1[0]] = casa_1_chances[0] * sobra1 # Aqui define o dict > chave_0 = 1ª odd casa 1 : prob correspondente
         probs[odds_casa_2[1]] = casa_2_chances[1] * sobra1 #                      chave_1 = 2ª odd casa 2 : prob correspondente
 
@@ -73,8 +73,6 @@ porcentagens = calcular_odds(odds_casa_1, odds_casa_2) # Aqui é um dict no form
 
 #porcentagens = {1.69: 59,1715,
 #                2.70: 37,0370}   # usar essas entradas para testes
-
-print(porcentagens)
 
 calcula_valores(porcentagens)
 
